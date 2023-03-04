@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+//colors
+$bcColor: #21092F;
+$bcWhite: #F2F2F2;
+$dark: #21092F;
+
+//mixins
+@mixin flexProperty ($display,$horizontal,$vertical,$wrap) {
+    display: $flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+    flex-wrap: $wrap;
+}
+
+@mixin background ($bcSize, $repeat, $position) {
+    background-size: $bcSize;
+    background-repeat: $repeat;
+    background-position: $position;
+}
+//classes
+%textStyle {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: $bcColor;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+}
+html {
+    font-size: 62.5%;
+    body {
+        font-style: normal;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+}
