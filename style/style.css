@@ -1,8 +1,180 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600&display=swap");
 html {
   font-size: 62.5%;
+  display: flex;
+  justify-content: center;
+  padding: 3.2rem 1.7rem 0 1.7rem;
+  background-image: url(../images/bg-main-mobile.png);
+  background-size: 100vw 29.042vh;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 html body {
   font-style: normal;
   font-family: "Space Grotesk", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 42.5rem;
+}
+
+.card-container {
+  max-width: 42.5rem;
+}
+.card-container .back-card {
+  height: 15.7rem;
+  max-width: 28.6rem;
+  background-image: url(../images/bg-card-back.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  text-align: right;
+}
+.card-container .back-card #cvc {
+  display: inline-block;
+  margin-top: 7.164rem;
+  margin-right: 3.702rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 0.128571rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.card-container .front-card {
+  height: 15.7rem;
+  max-width: 28.6rem;
+  background-image: url(../images/bg-card-front.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -6.756rem;
+  padding: 1.76rem 2.089rem 2.06rem 1.9rem;
+}
+.card-container .front-card img {
+  width: 5.4rem;
+  height: 3rem;
+}
+.card-container .front-card .number {
+  margin: 3.7rem 0 1.7rem 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.card-container .front-card div {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 0.128571rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.input-container {
+  max-width: 42.5rem;
+  margin-top: 4.84rem;
+}
+.input-container #input-box p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: #21092F;
+}
+.input-container #input-box input {
+  background: #ffffff;
+  border: 0.1rem solid #DFDEE0;
+  border-radius: 0.8rem;
+  margin: 0.9rem 0 2rem 0;
+  padding: 1.1rem 1.6rem;
+}
+.input-container #input-box input::-moz-placeholder {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  letter-spacing: unset;
+  text-transform: unset;
+  color: #21092F;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+}
+.input-container #input-box input::placeholder {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  letter-spacing: unset;
+  text-transform: unset;
+  color: #21092F;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+}
+.input-container #input-box #input-name, .input-container #input-box #input-number {
+  width: 100%;
+  height: 4.5rem;
+}
+.input-container #input-box .input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.input-container #input-box .input-box input {
+  height: 4.5rem;
+}
+.input-container #input-box .input-box #input-month, .input-container #input-box .input-box #input-year {
+  max-width: 7.2rem;
+}
+.input-container #input-box .input-box #input-cvc {
+  max-width: 16.4rem;
+}
+.input-container .confirmation {
+  margin: 4.84rem auto 4.8rem auto;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.input-container .confirmation h2 {
+  margin: 3.5rem 0 1.6rem 0;
+  font-weight: 500;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: unset;
+  text-transform: uppercase;
+  color: #21092F;
+}
+.input-container .confirmation p {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  letter-spacing: unset;
+  text-transform: unset;
+  color: #8F8694;
+}
+.input-container button {
+  width: 100%;
+  height: 5.3rem;
+  background: #21092F;
+  border-radius: 0.8rem;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  letter-spacing: unset;
+  text-transform: unset;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */

@@ -3,20 +3,34 @@
 //colors
 $bcColor: #21092F;
 $bcWhite: #F2F2F2;
+$White: #ffffff;
 $dark: #21092F;
 
 //mixins
-@mixin flexProperty ($display,$horizontal,$vertical,$wrap) {
-    display: $flex;
+@mixin flexProperty ($horizontal,$vertical,$wrap, $direction) {
     justify-content: $horizontal;
     align-items: $vertical;
     flex-wrap: $wrap;
+    flex-direction: $direction;
 }
 
 @mixin background ($bcSize, $repeat, $position) {
     background-size: $bcSize;
     background-repeat: $repeat;
     background-position: $position;
+}
+@mixin absolute ($top, $right, $left) {
+    top: $top;
+    right: $right;
+    left: $left;
+}
+@mixin textStyle ($weight, $size, $height, $spacing, $transform, $color) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    letter-spacing: $spacing;
+    text-transform: $transform;
+    color: $color;
 }
 //classes
 %textStyle {
@@ -29,9 +43,118 @@ $dark: #21092F;
 }
 html {
     font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    padding: 3.2rem 1.7rem 0 1.7rem;
+    background-image: url(../images/bg-main-mobile.png);
+    @include background(100vw 29.042vh, no-repeat ,top);
     body {
         font-style: normal;
         font-family: 'Space Grotesk', sans-serif;
+        display: flex;
+        @include flexProperty(center, space-between, nowrap, column);
+        width: 42.5rem;
+    }
+}
+.card-container {
+    max-width: 42.5rem;
+    .back-card {
+        height: 15.7rem;
+        max-width: 28.6rem;
+        background-image: url(../images/bg-card-back.png);
+        @include background(cover,no-repeat ,center);
+        margin-left: auto;
+        text-align: right;
+        #cvc {
+            // margin: 7.364rem 3.702rem 0 auto;
+            display: inline-block;
+            margin-top: 7.164rem;
+            margin-right: 3.702rem;
+            @include textStyle(500, 0.9rem, 1.1rem, 0.128571rem, uppercase , $White)
+        }
+    }
+    .front-card {
+        height: 15.7rem;
+        max-width: 28.6rem;
+        background-image: url(../images/bg-card-front.png);
+        @include background(cover,no-repeat ,center);
+        margin-top: -6.756rem;
+        padding: 1.76rem 2.089rem 2.06rem 1.9rem;
+        img {
+            width: 5.4rem;
+            height: 3rem;
+        }
+        .number {
+            margin: 3.7rem 0 1.7rem 0;
+            width: fit-content;
+            @include textStyle(500, 1.8rem, 2.3rem, 0.1rem, uppercase , $White)
+        }
+        div {
+            @include textStyle(500, 0.9rem, 1.1rem, 0.128571rem, uppercase , $White);
+            display: flex;
+            @include flexProperty(space-between, center, nowrap, row )
+        }
     }
 
 }
+.input-container {
+    max-width: 42.5rem;
+    margin-top: 4.84rem;
+    #input-box {
+        p {
+            @include textStyle(500, 1.2rem, 1.5rem, 0.2rem, uppercase , $dark);
+         }
+         input {
+             background: $White;
+             border: 0.1rem solid #DFDEE0;
+             border-radius: 0.8rem;
+             margin: 0.9rem 0 2rem 0;
+             padding: 1.1rem 1.6rem;
+         }
+         input::placeholder {
+             @include textStyle(500, 1.8rem, 2.3rem, unset, unset , $dark);
+             mix-blend-mode: normal;
+             opacity: 0.25;
+         }
+         #input-name, #input-number {
+             width: 100%;
+             height: 4.5rem;
+         }
+         .input-box {
+             display: flex;
+             @include flexProperty(space-between, center, nowrap, row );
+             input {
+                 height: 4.5rem;
+             }
+             #input-month, #input-year {
+                 max-width: 7.2rem;
+             }
+             #input-cvc {
+                 max-width: 16.4rem;
+             }
+         }
+    }
+    .confirmation {
+        margin: 4.84rem auto 4.8rem auto;
+        width: 100%;
+        text-align: center;
+        h2 {
+            margin: 3.5rem 0 1.6rem 0;
+            @include textStyle(500, 2.8rem, 3.6rem, unset, uppercase , $dark);
+        }
+        p {
+            @include textStyle(500, 1.8rem, 2.3rem, unset, unset , #8F8694);
+        }
+        display: none;
+    }
+    button {
+        width: 100%;
+        height: 5.3rem;
+        background: $dark;
+        border-radius: 0.8rem;
+        margin-top: 0.8rem;
+        @include textStyle(500, 1.8rem, 2.3rem, unset, unset , $White);
+    }
+}
+
+

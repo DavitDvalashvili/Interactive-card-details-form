@@ -14,30 +14,33 @@
       <span id="cvc">000</span>
     </div>
     <div class="front-card">
-      <p class="number"></p>
+      <img src="./images/card-logo.svg" alt="card-logo">
+      <p class="number">0000 0000 0000 0000</p>
       <div>
-        <span class="name">Firstname Lastname</span>
+        <span class="name">First name Last name</span>
         <span class="Date">00/00</span>
       </div>
     </div>
   </section>
-  <section class="input-contaier">
-    <p for="input-name">Cardholder Name</p>
-    <input id="input-name"  placeholder="e.g. Jane Appleseed">
-    <p for="input-number">Card Number</p>
-    <input id="input-number"  placeholder="e.g. 1234 5678 9123 0000">
-    <p >Exp. Date (MM/YY) <span id="cvc-text">CVC</span></p>
-    <div class="input-box">
-      <input id="input-month"  placeholder="MM">
-      <input id="input-year"  placeholder="YY">
-      <input id="input-cvc"  placeholder="e.g. 123">
+  <section class="input-container">
+    <div id="input-box">
+      <p for="input-name">Cardholder Name</p>
+      <input id="input-name"  placeholder="e.g. Jane Appleseed">
+      <p for="input-number">Card Number</p>
+      <input id="input-number"  placeholder="e.g. 1234 5678 9123 0000">
+      <p >Exp. Date (MM/YY) <span id="cvc-text">CVC</span></p>
+      <div class="input-box">
+        <input id="input-month"  placeholder="MM">
+        <input id="input-year"  placeholder="YY">
+        <input id="input-cvc"  placeholder="e.g. 123">
+      </div>
     </div>
-    <input type="submit" id="confirm" value="confirm">
-  </section>
-  <section class="submited">
-    <div id="confir-sign"></div>
-    <h2>THANK YOU!</h2>
-    <p class="confirmation-text">We've added your card details</p>
+    <div class="confirmation">
+      <img src="./images/icon-complete.svg" alt="icon-complete">
+      <h2>THANK YOU!</h2>
+      <p class="confirmation-text">We've added your card details</p>
+    </div>
+    <button id="button">Confirm</button>
   </section>
 </body>
 </html>
