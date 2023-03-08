@@ -5,6 +5,7 @@ $bcColor: #21092F;
 $bcWhite: #F2F2F2;
 $White: #ffffff;
 $dark: #21092F;
+$red: #FF5050;
 
 //mixins
 @mixin flexProperty ($horizontal,$vertical,$wrap, $direction) {
@@ -92,47 +93,61 @@ html {
         div {
             @include textStyle(500, 0.9rem, 1.1rem, 0.128571rem, uppercase , $White);
             display: flex;
-            @include flexProperty(space-between, center, nowrap, row )
+            @include flexProperty(space-between, center, nowrap, row );
+            text-transform: uppercase;
         }
     }
 
 }
 .input-container {
     max-width: 42.5rem;
-    margin-top: 4.84rem;
+    margin-top: 2.84rem;
     #input-box {
         p {
             @include textStyle(500, 1.2rem, 1.5rem, 0.2rem, uppercase , $dark);
-         }
-         input {
-             background: $White;
-             border: 0.1rem solid #DFDEE0;
-             border-radius: 0.8rem;
-             margin: 0.9rem 0 2rem 0;
-             padding: 1.1rem 1.6rem;
-         }
-         input::placeholder {
+            margin: 2rem 0 0.9rem 0;
+        }
+        input {
+            background: $White;
+            border: 0.1rem solid #DFDEE0;
+            border-radius: 0.8rem;
+            padding: 1.1rem 1.6rem;
+        }
+        input:focus {
+            outline: none;
+        }
+        input::placeholder {
              @include textStyle(500, 1.8rem, 2.3rem, unset, unset , $dark);
              mix-blend-mode: normal;
              opacity: 0.25;
-         }
-         #input-name, #input-number {
+        }
+        #input-name, #input-number {
              width: 100%;
              height: 4.5rem;
-         }
-         .input-box {
-             display: flex;
-             @include flexProperty(space-between, center, nowrap, unset);
-             input {
-                 height: 4.5rem;
-             }
-             #input-month, #input-year {
-                 max-width: 7.2rem;
-             }
-             #input-cvc {
-                 max-width: 16.4rem;
-             }
-         }
+        }
+        .input-box {
+            display: flex;
+            .input-box-1 {
+                display: inline-block;
+                white-space: nowrap;
+            }
+            @include flexProperty(space-between, center, nowrap, unset);
+            input {
+                height: 4.5rem;
+            }
+            #input-month, #input-year {
+                max-width: 7.2rem;
+            }
+            #input-cvc {
+                max-width: 16.4rem;
+            }
+        }
+        span {
+            @include textStyle(500, 1.2rem, 1.5rem, unset, unset , $red);
+            margin-top: 0.8rem;
+            display: block;
+            display: none;
+        }
     }
     .confirmation {
         margin: 4.84rem auto 4.8rem auto;
@@ -152,7 +167,7 @@ html {
         height: 5.3rem;
         background: $dark;
         border-radius: 0.8rem;
-        margin-top: 0.8rem;
+        margin-top: 2.8rem;
         @include textStyle(500, 1.8rem, 2.3rem, unset, unset , $White);
     }
 }
@@ -174,6 +189,9 @@ html {
         max-width: unset;
         width: 54.1rem;
         height: 52.7rem;
+        p {
+            margin: 2.6rem 0 0.9rem 0;
+        }
         .back-card {
             height: 24.5rem;
             max-width: 44.7rem;
@@ -209,9 +227,6 @@ html {
         width: 38.1rem;
         margin-top: unset;
         #input-box {
-            input {
-                margin: 0.9rem 0 2.6rem 0;
-            }
             .input-box {
                 display: flex;
                 #input-month, #input-year {
@@ -220,9 +235,6 @@ html {
                 #input-cvc {
                     max-width: 19.1rem;
                 }
-            }
-            #cvc-text {
-                margin-left: 5rem;
             }
         }
         .confirmation {
@@ -233,7 +245,7 @@ html {
             height: 5.3rem;
             background: $dark;
             border-radius: 0.8rem;
-            margin-top: 1.4rem;
+            margin-top: 2.6rem;
         }
     }
 }

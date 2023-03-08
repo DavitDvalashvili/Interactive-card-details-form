@@ -81,11 +81,12 @@ html body {
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
+  text-transform: uppercase;
 }
 
 .input-container {
   max-width: 42.5rem;
-  margin-top: 4.84rem;
+  margin-top: 2.84rem;
 }
 .input-container #input-box p {
   font-weight: 500;
@@ -94,13 +95,16 @@ html body {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: #21092F;
+  margin: 2rem 0 0.9rem 0;
 }
 .input-container #input-box input {
   background: #ffffff;
   border: 0.1rem solid #DFDEE0;
   border-radius: 0.8rem;
-  margin: 0.9rem 0 2rem 0;
   padding: 1.1rem 1.6rem;
+}
+.input-container #input-box input:focus {
+  outline: none;
 }
 .input-container #input-box input::-moz-placeholder {
   font-weight: 500;
@@ -133,6 +137,10 @@ html body {
   flex-wrap: nowrap;
   flex-direction: unset;
 }
+.input-container #input-box .input-box .input-box-1 {
+  display: inline-block;
+  white-space: nowrap;
+}
 .input-container #input-box .input-box input {
   height: 4.5rem;
 }
@@ -141,6 +149,17 @@ html body {
 }
 .input-container #input-box .input-box #input-cvc {
   max-width: 16.4rem;
+}
+.input-container #input-box span {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: unset;
+  text-transform: unset;
+  color: #FF5050;
+  margin-top: 0.8rem;
+  display: block;
+  display: none;
 }
 .input-container .confirmation {
   margin: 4.84rem auto 4.8rem auto;
@@ -170,7 +189,7 @@ html body {
   height: 5.3rem;
   background: #21092F;
   border-radius: 0.8rem;
-  margin-top: 0.8rem;
+  margin-top: 2.8rem;
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2.3rem;
@@ -200,6 +219,9 @@ html body {
     max-width: unset;
     width: 54.1rem;
     height: 52.7rem;
+  }
+  .card-container p {
+    margin: 2.6rem 0 0.9rem 0;
   }
   .card-container .back-card {
     height: 24.5rem;
@@ -253,9 +275,6 @@ html body {
     width: 38.1rem;
     margin-top: unset;
   }
-  .input-container #input-box input {
-    margin: 0.9rem 0 2.6rem 0;
-  }
   .input-container #input-box .input-box {
     display: flex;
   }
@@ -265,9 +284,6 @@ html body {
   .input-container #input-box .input-box #input-cvc {
     max-width: 19.1rem;
   }
-  .input-container #input-box #cvc-text {
-    margin-left: 5rem;
-  }
   .input-container .confirmation {
     margin: 0 0 3.4rem 0;
   }
@@ -276,6 +292,6 @@ html body {
     height: 5.3rem;
     background: #21092F;
     border-radius: 0.8rem;
-    margin-top: 1.4rem;
+    margin-top: 2.6rem;
   }
 }/*# sourceMappingURL=style.css.map */
