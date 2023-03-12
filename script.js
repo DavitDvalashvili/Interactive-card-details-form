@@ -13,6 +13,8 @@ const month = document.querySelector("#month");
 const year = document.querySelector("#year");
 const inputYear = document.querySelector("#input-year");
 const dateValidation = document.querySelector(".date-validation");
+const inputBox = document.querySelector("#input-box");
+const confirmation = document.querySelector(".confirmation");
 
 
 
@@ -21,12 +23,13 @@ let timeoutId;
 //display cardholder's name on screen after 1000 ms
 inputName.addEventListener('input', () => {
     clearTimeout(timeoutId);
-    nameValidation.style.display = "none"
+    nameValidation.style.display = "none";
     timeoutId = setTimeout(() => {
       if(inputName.value == "") {
         cardName.textContent = "FIRST NAME LAST NAME"
       } else {
         cardName.textContent = inputName.value;
+        inputName.style.borderColor = "#DFDEE0";
       }
     }, 1000);
 });
@@ -41,6 +44,7 @@ inputNumber.addEventListener('input', (e) => {
             cardNumber.textContent = "0000 0000 0000 0000"
         } else {
           cardNumber.textContent = inputNumber.value;
+          inputNumber.style.borderColor = "#DFDEE0";
         }
     }, 1000);
 });
@@ -63,8 +67,9 @@ inputCvc.addEventListener('input', (e) => {
         cvc.textContent = "000"
       } else {
         cvc.textContent = inputCvc.value;
+        inputCvc.style.borderColor = "#DFDEE0";
       }
-  }, 500);
+  }, 1000);
 });
 
 //prevents typing non-numerical characters
@@ -75,7 +80,7 @@ inputCvc.addEventListener("keypress", function (e) {
 });
 
 
-//display month on screen after 500 ms
+//display month on screen after 1000 ms
 inputMonth.addEventListener('keypress', (e) => {
   clearTimeout(timeoutId);
   dateValidation.style.display = "none" 
@@ -84,8 +89,9 @@ inputMonth.addEventListener('keypress', (e) => {
         month.textContent = "00"
       } else {
         month.textContent = inputMonth.value;
+        inputMonth.style.borderColor = "#DFDEE0";
       }
-  }, 500);
+  }, 1000);
 });
 
 //prevents typing non-numerical characters
@@ -95,17 +101,18 @@ inputMonth.addEventListener("keypress", function (e) {
   }
 });
 
-//display month on screen after 500 ms
+//display month on screen after 1000 ms
 inputYear.addEventListener("input", (e) => {
   clearTimeout(timeoutId);
-  dateValidation.style.display = "none" 
+  dateValidation.style.display = "none";
   timeoutId = setTimeout( () => {
     if(inputYear.value == "") {
       year.textContent = "00"
     } else {
       year.textContent = inputYear.value;
+      inputYear.style.borderColor = "#DFDEE0";
     }
-  })
+  }, 1000)
 })
 
 //prevents typing non-numerical characters
@@ -115,12 +122,35 @@ inputYear.addEventListener("keypress", function (e) {
   }
 });
 
-
+//displays confirmation when every input is filled or show error message.
 confirmBtn.addEventListener("click", () => {
-  (inputName.value == "") ? nameValidation.style.display = "block" : "";
-  (inputNumber.value == "") ? numValidation.style.display = "block" : "";
-  (inputCvc.value == "") ? cvcValidation.style.display = "block" : "";
-  (inputYear.value == "" || inputMonth.value == "") ? dateValidation.style.display = "block" : "";
+  if(inputName.value != "" && inputNumber.value != "" && 
+  inputCvc.value != "" && inputMonth.value != "" &&
+  inputYear.value != "") {
+    inputBox.style.display = "none";
+    confirmation.style.display = "block"
+  } else {
+    if(inputName.value == "") {
+      nameValidation.style.display = "block";
+      inputName.style.borderColor = "#FF5050";
+      console.log(inputName.value)
+    }
+    if (inputNumber.value == "") {
+      numValidation.style.display = "block";
+      inputNumber.style.borderColor = "#FF5050";
+    }
+    if (inputCvc.value == "") {
+      cvcValidation.style.display = "block";
+      inputCvc.style.borderColor = "#FF5050";
+    }
+    if (inputMonth.value == "") {
+      dateValidation.style.display = "block";
+      inputMonth.style.borderColor = "#FF5050";
+    }
+    if (inputYear.value == "") {
+      dateValidation.style.display = "block";
+      inputYear.style.borderColor = "#FF5050";
+    }
+  }
 })
-
 

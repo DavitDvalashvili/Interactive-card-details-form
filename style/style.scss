@@ -42,6 +42,7 @@ $red: #FF5050;
     mix-blend-mode: normal;
     opacity: 0.25;
 }
+
 html {
     font-size: 62.5%;
     display: flex;
@@ -114,7 +115,7 @@ html {
             padding: 1.1rem 1.6rem;
         }
         input:focus {
-            outline: none;
+            outline-color: #6348FE;
         }
         input::placeholder {
              @include textStyle(500, 1.8rem, 2.3rem, unset, unset , $dark);
@@ -142,11 +143,23 @@ html {
                 max-width: 16.4rem;
             }
         }
+        .validation-box {
+            .cvc-validation {
+                margin-right: 8.091rem;
+                float: right;
+            }
+            .date-validation {
+                float: left;
+            }
+        }
         span {
             @include textStyle(500, 1.2rem, 1.5rem, unset, unset , $red);
             margin-top: 0.8rem;
             display: block;
             display: none;
+        }
+        span .outline-style {
+            outline-color: $red;
         }
     }
     .confirmation {
@@ -236,6 +249,11 @@ html {
                     max-width: 19.1rem;
                 }
             }
+            .validation-box {
+                .cvc-validation {
+                    margin-right: 10.791rem;
+                }
+            }
         }
         .confirmation {
             margin: 0 0 3.4rem 0;
@@ -249,3 +267,4 @@ html {
         }
     }
 }
+
